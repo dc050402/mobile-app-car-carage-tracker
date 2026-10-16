@@ -1,8 +1,9 @@
 package com.example.garage_tracker
 
 import android.os.Bundle
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,25 +34,8 @@ class MainActivity : AppCompatActivity() {
             )
         )
 
-        val services = listOf(
-            Service(id = 1, garageId = 1, name = "Oil change",
-                description = "Full synthetic", price = 59.99),
-            Service(id = 2, garageId = 1, name = "Brake check",
-                description = "Front and rear", price = 35.0),
-            Service(id = 3, garageId = 2, name = "Tyre rotation",
-                description = "All four wheels", price = 25.0)
-        )
-
-        val text = buildString {
-            for (garage in garages.sortedByDescending { it.rating }) {
-                appendLine("${garage.name} - ${garage.rating}")
-                for (service in services.filter { it.garageId == garage.id }) {
-                    appendLine("   ${service.name}: ${"%.2f".format(service.price)}")
-                }
-                appendLine()
-            }
-        }
-
-        findViewById<TextView>(R.id.garageText).text = text
+        val list = findViewById<RecyclerView>(R.id.garageList)
+        list.layoutManager = LinearLayoutManager(this)
+        list.adapter = GarageAdapter(garages.sortedByDescending { it.rating })
     }
 }

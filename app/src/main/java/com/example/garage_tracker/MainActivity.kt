@@ -30,16 +30,24 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun refreshList() {
-        list.adapter = GarageAdapter(GarageStore.getAll()) { garage ->
-            AlertDialog.Builder(this)
-                .setTitle("Delete garage?")
-                .setMessage("Remove ${garage.name}?")
-                .setPositiveButton("Delete") { _, _ ->
-                    GarageStore.delete(garage.id)
-                    refreshList()
-                }
-                .setNegativeButton("Cancel", null)
-                .show()
-        }
+        list.adapter = GarageAdapter(
+            garages = GarageStore.getAll(),
+            onClick = { garage ->
+                val intent = Intent(this, AddGarageActivity::class.java)
+                intent.putExtra("garage_id", garage.id)
+                startActivity(intent)
+            },
+            onLongClick = { garage ->
+                AlertDialog.Builder(this)
+                    .setTitle("Delete garage?")
+                    .setMessage("Remove ${garage.name}?")
+                    .setPositiveButton("Delete") { _, _ ->
+                        GarageStore.delete(garage.id)
+                        refreshList()
+                    }
+                    .setNegativeButton("Cancel", null)
+                    .show()
+            }
+        )
     }
 }

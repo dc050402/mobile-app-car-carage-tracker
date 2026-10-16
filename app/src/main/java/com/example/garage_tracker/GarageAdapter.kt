@@ -7,7 +7,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class GarageAdapter(private val garages: List<Garage>,
-                    private val onLongClick: (Garage) -> Unit
+                    private val onLongClick: (Garage) -> Unit,
+                    private val onClick: (Garage) -> Unit
 ) : RecyclerView.Adapter<GarageAdapter.GarageViewHolder>() {
 
     class GarageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -27,6 +28,7 @@ class GarageAdapter(private val garages: List<Garage>,
         holder.nameText.text = garage.name
         holder.addressText.text = garage.address
         holder.ratingText.text = "Rating: ${garage.rating}"
+        holder.itemView.setOnClickListener {onClick(garage)}
         holder.itemView.setOnLongClickListener {
             onLongClick(garage)
             true

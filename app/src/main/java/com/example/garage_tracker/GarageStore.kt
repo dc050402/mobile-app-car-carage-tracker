@@ -1,6 +1,6 @@
 package com.example.garage_tracker
 
-class GarageStore {
+object GarageStore {
 
     private val garages = mutableListOf<Garage>()
 

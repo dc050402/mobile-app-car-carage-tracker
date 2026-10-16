@@ -52,11 +52,17 @@ class AddGarageActivity : AppCompatActivity() {
                 }
                 finish()
             } else {
-                Toast.makeText(
-                    this,
-                    "Enter a name, an address and a rating from 0 to 5",
-                    Toast.LENGTH_SHORT
-                ).show()
+                val errorMessage = when {
+                    garage.name.isBlank() -> "Please enter a garage name"
+                    garage.address.isBlank() -> "Please enter an address"
+                    garage.rating.isFinite() || garage.rating !in 0.0..5.0 -> "Rating must be between 0 and 5"
+                    garage.latitude != null && garage.latitude!! !in -90.0..90.0 ->
+                        "Latitude must be between -90 and 90"
+                    garage.longitude != null && garage.longitude!! !in -180.0..180.0 ->
+                        "Longitude must be between -180 and 180"
+                    else -> "Please check the garage details"
+                }
+                Toast.makeText(this,errorMessage, Toast.LENGTH_SHORT).show()
             }
         }
     }

@@ -3,16 +3,25 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:background="#171A21">
 
     <EditText
         android:id="@+id/searchInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="12dp"
-        android:hint="Search garages..."
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="8dp"
+        android:hint="Search garages by name or address"
         android:inputType="text"
-        android:singleLine="true" />
+        android:singleLine="true"
+        android:background="@drawable/search_background"
+        android:textColor="#F3F4F6"
+        android:textColorHint="#9CA3AF"
+        android:padding="12dp"
+        android:contentDescription="Search garages by name or address"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/garageList"
@@ -20,11 +29,19 @@
         android:layout_height="0dp"
         android:layout_weight="1" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/addButton"
+        android:backgroundTint="@null"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="Add garage" />
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:text="Add Garage"
+        android:background="@drawable/button_background"
+        android:textColor="#FFFFFF"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:minHeight="52dp"/>
 
 </LinearLayout>

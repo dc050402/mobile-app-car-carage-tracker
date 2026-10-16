@@ -6,8 +6,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class GarageAdapter(private val garages: List<Garage>) :
-    RecyclerView.Adapter<GarageAdapter.GarageViewHolder>() {
+class GarageAdapter(private val garages: List<Garage>,
+                    private val onLongClick: (Garage) -> Unit
+) : RecyclerView.Adapter<GarageAdapter.GarageViewHolder>() {
 
     class GarageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val nameText: TextView = itemView.findViewById(R.id.nameText)
@@ -26,6 +27,10 @@ class GarageAdapter(private val garages: List<Garage>) :
         holder.nameText.text = garage.name
         holder.addressText.text = garage.address
         holder.ratingText.text = "Rating: ${garage.rating}"
+        holder.itemView.setOnLongClickListener {
+            onLongClick(garage)
+            true
+        }
     }
 
     override fun getItemCount(): Int = garages.size

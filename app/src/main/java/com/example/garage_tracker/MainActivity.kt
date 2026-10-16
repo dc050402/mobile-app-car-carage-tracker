@@ -1,4 +1,3 @@
-
 package com.example.garage_tracker
 
 import android.content.Intent
@@ -30,6 +29,10 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.addButton).setOnClickListener {
             startActivity(Intent(this, AddGarageActivity::class.java))
+        }
+
+        findViewById<Button>(R.id.compareButton).setOnClickListener {
+            startActivity(Intent(this, CompareGaragesActivity::class.java))
         }
 
         refreshList()

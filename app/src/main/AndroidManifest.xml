@@ -24,6 +24,10 @@
 
         <activity android:name=".AddGarageActivity"
             android:exported="false" />
+
+        <activity android:name=".CompareGaragesActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>

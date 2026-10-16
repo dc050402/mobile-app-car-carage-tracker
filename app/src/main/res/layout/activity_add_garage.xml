@@ -1,19 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#171A21"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Garage Details"
+            android:textColor="#F3F4F6"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enter the information below"
+            android:textColor="#9CA3AF"
+            android:textSize="14sp"
+            android:layout_marginBottom="24dp" />
 
         <EditText
             android:id="@+id/nameInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
+            android:layout_marginBottom="14dp"
+            android:minHeight="52dp"
+            android:padding="14dp"
+            android:background="@drawable/search_background"
+            android:textColor="#F3F4F6"
+            android:textColorHint="#9CA3AF"
             android:hint="Garage name"
             android:inputType="textCapWords" />
 
@@ -21,7 +45,12 @@
             android:id="@+id/addressInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
+            android:layout_marginBottom="14dp"
+            android:minHeight="52dp"
+            android:padding="14dp"
+            android:background="@drawable/search_background"
+            android:textColor="#F3F4F6"
+            android:textColorHint="#9CA3AF"
             android:hint="Address"
             android:inputType="textPostalAddress" />
 
@@ -29,7 +58,12 @@
             android:id="@+id/phoneInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
+            android:layout_marginBottom="14dp"
+            android:minHeight="52dp"
+            android:padding="14dp"
+            android:background="@drawable/search_background"
+            android:textColor="#F3F4F6"
+            android:textColorHint="#9CA3AF"
             android:hint="Phone number"
             android:inputType="phone" />
 
@@ -37,7 +71,12 @@
             android:id="@+id/ratingInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
+            android:layout_marginBottom="14dp"
+            android:minHeight="52dp"
+            android:padding="14dp"
+            android:background="@drawable/search_background"
+            android:textColor="#F3F4F6"
+            android:textColorHint="#9CA3AF"
             android:hint="Rating (0 to 5)"
             android:inputType="numberDecimal" />
 
@@ -45,23 +84,29 @@
             android:id="@+id/descriptionInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:minHeight="100dp"
+            android:layout_marginBottom="20dp"
+            android:minHeight="120dp"
+            android:padding="14dp"
             android:gravity="top|start"
+            android:background="@drawable/search_background"
+            android:textColor="#F3F4F6"
+            android:textColorHint="#9CA3AF"
             android:hint="Description"
             android:inputType="textMultiLine" />
 
-
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/saveButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:minHeight="48dp"
-            android:text="Save"
-            android:textAllCaps="false" />
-
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="16dp"
+            android:minHeight="52dp"
+            android:background="@drawable/button_background"
+            android:backgroundTint="@null"
+            android:text="Save Garage"
+            android:textColor="#FFFFFF"
+            android:textAllCaps="false"
+            android:textStyle="bold" />
 
     </LinearLayout>
 </ScrollView>

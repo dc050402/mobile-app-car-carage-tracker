@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class GarageAdapter(private val garages: List<Garage>,
+class GarageAdapter(private val garages: MutableList<Garage>,
                     private val onLongClick: (Garage) -> Unit,
                     private val onClick: (Garage) -> Unit
 ) : RecyclerView.Adapter<GarageAdapter.GarageViewHolder>() {
@@ -36,4 +36,10 @@ class GarageAdapter(private val garages: List<Garage>,
     }
 
     override fun getItemCount(): Int = garages.size
+
+    fun updateList(newList: List<Garage>) {
+        garages.clear()
+        garages.addAll(newList)
+        notifyDataSetChanged()
+    }
 }

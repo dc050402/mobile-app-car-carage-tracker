@@ -1,4 +1,4 @@
-package com.example.garagetracker
+package com.example.garage_tracker
 
 data class Service(
     val id: Long = System.currentTimeMillis(),

@@ -13,6 +13,7 @@ data class Garage(
     fun isValid(): Boolean {
         return name.isNotBlank() &&
                 address.isNotBlank() &&
+                rating.isFinite() &&
                 rating in 0.0..5.0 &&
                 (latitude == null || latitude!! in -90.0..90.0) &&
                 (longitude == null || longitude!! in -180.0..180.0)

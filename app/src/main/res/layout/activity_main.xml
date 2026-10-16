@@ -17,6 +17,9 @@
         android:hint="Search garages by name or address"
         android:inputType="text"
         android:singleLine="true"
+        android:background="@drawable/search_background"
+        android:textColor="#F3F4F6"
+        android:textColorHint="#9CA3AF"
         android:padding="12dp"
         android:contentDescription="Search garages by name or address"/>
 
@@ -26,15 +29,19 @@
         android:layout_height="0dp"
         android:layout_weight="1" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/addButton"
+        android:backgroundTint="@null"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="16dp"
-        android:minHeight="48dp"
         android:text="Add Garage"
-        android:textAllCaps="false"/>
+        android:background="@drawable/button_background"
+        android:textColor="#FFFFFF"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:minHeight="52dp"/>
 
 </LinearLayout>

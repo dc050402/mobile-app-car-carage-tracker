@@ -11,6 +11,7 @@ class AddGarageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_garage)
+        GarageStore.initialize(this)
 
         val nameInput = findViewById<EditText>(R.id.nameInput)
         val addressInput = findViewById<EditText>(R.id.addressInput)

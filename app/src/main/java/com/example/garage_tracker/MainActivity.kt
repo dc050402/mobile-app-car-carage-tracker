@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        GarageStore.initialize(this)
 
         searchInput = findViewById(R.id.searchInput)
         list = findViewById(R.id.garageList)
